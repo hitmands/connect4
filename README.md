@@ -2,6 +2,10 @@
 
 - <https://en.wikipedia.org/wiki/Connect_Four>
 
+## Deployment
+
+- <https://hitmands.github.io/connect4>
+
 ## Rules
 
 - Two players take turns to drop a disc into a 7x6 grid.

@@ -2,8 +2,9 @@
   "name": "connect4-solution",
   "private": true,
   "scripts": {
-    "test": "vitest",
-    "start": "vite"
+    "build": "vite build",
+    "start": "vite",
+    "test": "vitest"
   },
   "devDependencies": {
     "@types/ramda": "^0.30.0",
