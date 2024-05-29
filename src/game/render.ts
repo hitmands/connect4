@@ -43,17 +43,17 @@ const toWinner = ({ winner }: Game) => {
 export const render = (game: Game) => {
   const board = toString(game);
   const history = toHistory(game);
+  const player = turn(game);
+
   const winner = toWinner(game);
   const error = toError(game);
-  const player = turn(game);
+  const who = `(${player}) ${toPlayerColor(player)} MOVES NEXT`;
 
   return `
 ${board}
 
 ------------------------------------------------------------
-STATUS:  | ${winner ?? error ?? 'PLAYING'};
-------------------------------------------------------------
-TURN:    | ${toPlayerColor(player)} (${player});
+STATUS:  | ${winner ?? error ?? who};
 ------------------------------------------------------------
 HISTORY: | (${game.history.length}) Array<
          |  ${history}
