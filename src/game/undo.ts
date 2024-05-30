@@ -1,10 +1,13 @@
 import * as R from 'ramda';
 import { Game } from './connect4.definitions';
+import { isDraw } from './evaluate';
 import { toEmptyCell } from './init';
 
 export const undo = (moves = 1, game: Game): Game => {
   if (game.error) {
-    return R.omit(['error'], game);
+    const $game = R.omit(['error'], game);
+
+    return isDraw($game) ? undo(moves, $game) : $game;
   }
 
   if (!moves || R.isEmpty(game.history)) {

@@ -3,7 +3,7 @@ import { invalid } from './player';
 import { toSequences } from './sequences';
 import { Game, Sequence } from './connect4.definitions';
 
-const isDraw = (game: Game) => game.history.length === 42;
+export const isDraw = (game: Game) => game.history.length === 42;
 
 const findWinningSequence = (sequences?: Sequence[]) =>
   sequences?.find((sequence) => sequence.data.length >= 4);
